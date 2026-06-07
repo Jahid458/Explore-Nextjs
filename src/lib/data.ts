@@ -132,6 +132,11 @@ const SAMPLE_LOGS: LogEntry[] = [
   },
 ];
 
+export async function getServices(delay = 2000): Promise<Service[]> {
+  await new Promise((resolve) => setTimeout(resolve, delay));
+  return SERVICES;
+}
+
 export async function getServiceById(
   id: string,
   delay = 1500,

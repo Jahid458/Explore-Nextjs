@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar1 } from "@/components/navbar1";
 import { ThemeProvider } from "@/Provider/theme-provider";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -21,8 +22,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  analytic,
+  team
 }: Readonly<{
   children: React.ReactNode;
+  analytic: React.ReactNode;
+  team: React.ReactNode;
 }>) {
   return (
     <html
@@ -38,6 +43,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar1 />
+          <div className="flex w-full justify-around p-20">
+
+          {analytic}
+          {team}
+          </div>
           {children}
         </ThemeProvider>
       </body>
